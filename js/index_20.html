@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScriptの練習</title>
+</head>
+<body>
+  <script>
+    /*
+      コメント
+    */
+    var a = new Array(100,300,200);
+    // var a = [100,300,200];
+    console.log(a.length);
+    // unshift -> array <- push
+    //   shift <- array -> pop
+    a.push(500);
+    console.log(a);
+    a.splice(1,2,800,1000);
+    console.log(a);
+  </script>
+</body>
+</html>

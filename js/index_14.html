@@ -5,18 +5,19 @@
   <title>JavaScriptの練習</title>
 </head>
 <body>
-  <script src="myscript.js"></script>
   <script>
     /*
       コメント
     */
-    var s;
-    s = "hello";
-    s = "hel\"lo";
-    s = "it/'s a pe\tn.";
-    s = "hello" + "world";
-    s = "5" + 5;
-    console.log(s);
+    /*
+    (function hello(name) {
+      console.log("hello"+name);
+    })("Tom");
+    */
+    (function(){
+    var x=10,y=20;
+    console.log(x+y);
+    })();
   </script>
 </body>
 </html>
