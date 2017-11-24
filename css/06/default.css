@@ -1,0 +1,11 @@
+/*li:last-child {*/
+/*li:nth-child(3){*/
+/*li:nth-child(odd){*/
+/*li:nth-child(even){*/
+li:nth-last-child(3n+1){
+ background:violet;
+}
+
+li:only_child{
+  background:violet;
+}

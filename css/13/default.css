@@ -1,0 +1,12 @@
+body {margin: 0;}
+
+header {
+  width: 200px;
+  height: 200px;
+  /*background-image: radial-gradient(skyblue,blue);*/
+  /*background-image: radial-gradient(at 30px 40px,skyblue,blue);*/
+  /*background-image: radial-gradient(ellipse 20px 30px at 30px 40px,skyblue,blue);*/
+  /*background-image: radial-gradient(circle 20px at 30px 40px,skyblue,blue);*/
+  /*background-image: radial-gradient(farthest-side at 30px 40px,skyblue,blue);*/
+  background-image: repeating-radial-gradient(skyblue,blue 20px);
+}

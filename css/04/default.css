@@ -1,0 +1,8 @@
+body {
+  background: skyblue;
+}
+
+img {
+  border: 7px solid blue;
+  opacity: 0.3;
+}

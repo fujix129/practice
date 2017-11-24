@@ -1,0 +1,11 @@
+div {
+  width: 200px;
+  height: 200px;
+  background: skyblue url(kinako.jpg);
+  /*border-radius: 30px;*/
+  /*border-bottom-right-radius:50px;*/
+  /*border-radius:10px 20px 30px;*/
+  border-radius: 50%;
+  
+}
+

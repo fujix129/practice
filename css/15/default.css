@@ -1,0 +1,24 @@
+div {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+#box1 {
+  background: skyblue;
+  opacity: 0.5;
+}
+
+#box2 {
+  background: orange;
+  opacity: 0.5;
+  /*transform: translate(20px,40px);*/
+  /*transform: translate(20px);*/
+  /*transform: scale(0.5 ,1.5);*/
+  /*transform: skew(10deg,20deg);*/
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+}

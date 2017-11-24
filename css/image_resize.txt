@@ -1,0 +1,1 @@
+sips --resampleWidth (size) hoge_before.jpg --out hoge_after.jpg

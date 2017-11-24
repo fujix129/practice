@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 320px;
+  height: 100px;
+  background: skyblue;
+}
+
+.box {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  /*width: 80px;*/
+  /*height: 70px;*/
+  background: #eee;
+  float:left;
+
+  padding: 10px;
+  border-bottom: 30px solid #ccc;
+}
+
+.box + .box {
+  margin-left: 10px;
+}
