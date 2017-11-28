@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Password Generator</title>
+  <style>
+  body {
+    background: #e0e0e0;
+    font-family: 'Courier New', sans-serif;
+    text-align: center;
+  }
+  .countainer {
+    width: 320px;
+    margin: 30px auto;
+  }
+  input[type="text"]{
+    width: 300px;
+    padding: 7px;
+    border-radius:3px;
+    font-size:24px;
+    font-family: 'Courier New', sans-serif;
+    text-align:center;
+  }
+  #btn{
+    color:#fff;
+    background: #00aaff;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 0 4px 0 #0088cc;
+    cursor: pointer;
+    user-select: none;
+  }
+  #btn:hober{
+   opacity: 0.8;
+  }
+  fieldset {
+    margin-top: 40px;
+    border: 1px dashed #aaa;
+    border-radius: 20px;
+  }
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  firledset p {
+    text-align:center;
+  }
+  </style>
+</head>
+<body>
+  <div class="countainer">
+  <p><input type="text" id="result"></p>
+  <div id="btn">Generate Password</div>
+
+  <fieldset>
+    <legend>Options</legend>
+    <p>Length(<span id="label">8</span>): <input type="range" id="slider" value="8" min="4" max=20></p>
+    <p>
+      Numbers?: <input type="checkbox" id="numbers">
+      Symbols?: <input type="checkbox" id="symbols">
+    </p>
+  </fieldset>
+  </div>
+  <script>
+    (function() {
+      'use strict';
+
+      var slider = document.getElementById('slider');
+      var label = document.getElementById('label');
+      var btn = document.getElementById('btn');
+      var result = document.getElementById('result');
+      var numbers = document.getElementById('numbers');
+      var symbols = document.getElementById('symbols');
+
+      function getPassword() {
+        var seed_letter = "abcdefghijklmnopqrstuvwxyz";
+        var seed_number = "1234567890";
+        var seed_symbol = "!#$%&()";
+        var len = slider.value;
+        var pwd = "";
+        var seed;
+
+        seed = seed_letter + seed_letter.toUpperCase();
+        if (numbers.checked == true) {
+          seed += seed_number;
+        }
+        if (symbols.checked == true) {
+          seed += seed_symbol;
+        }
+
+        for (var i = 0; i < len ; i++){
+          pwd += seed[Math.floor(Math.random() * seed.length )];
+        }
+
+        result.value = pwd;
+      }
+
+      slider.addEventListener('change', function() {
+        label.innerHTML = this.value;
+      })
+
+      btn.addEventListener('click', function() {
+        getPassword();
+//        result.value = "hoge";
+      })
+
+      result.addEventListener('click', function() {
+        this.select();
+      })
+
+    })();
+  </script>
+
+</body>
+</html>
