@@ -50,13 +50,13 @@ var JapaneseHolidays = require('japanese-holidays');
 
 controller.hears('明日は',['direct_message','direct_mention','mention'],function(bot,message) {
 
-  var now = new Date(2017,11,31);
+  var now = new Date();
   var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
   var holiday = JapaneseHolidays.isHoliday(tomorrow);
   if(holiday) {
       bot.reply(message,"明日は " + holiday + " でお休みだよ！やったね！");
   } else {
-      bot.reply(message,"明日は "+ tomorrow + "で祝日ではないんだ。働こう。");
+      bot.reply(message,"明日は祝日ではないんだ。頑張って働こう。");
   }
 });
 
