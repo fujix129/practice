@@ -60,7 +60,53 @@ controller.hears('明日は',['direct_message','direct_mention','mention'],funct
   }
 });
 
+const GitHubApi = require('github')
+
+var github = new GitHubApi({
+  debug:true
+})
+
+github.authenticate({
+  type: 'token',
+  token: 'ea33bee88b3bb477a76b26bc9dc35a2d6d4938fb'
+});
+
+// TODO: optional authentication here depending on desired endpoints. See below in README.
+
+controller.hears('今日やること',['direct_message','direct_mention','mention'],function(bot,message) {
+  github.issues.getForRepo({
+    owner: 'sasekikun',
+    repo: 'sasekikun.github.io',
+    filter: 'all'
+  }).then(res => {
+    var count = 0;
+    do{
+      var select = Math.floor(Math.random() * res.data.length);
+      // var title = JSON.stringify(res.data[select],null," ");//.title;
+      var title = res.data[select].title;
+      var url = res.data[select].html_url;
+      count+=1;
+      if ( count > 10 ) {
+        break;
+      }
+    }  while (!url.match(/issue/));
+    if ( count > 10 ) {
+      bot.say({
+        channel:'bot_test',
+        text:"どうしよっか。。。"
+      })
+    }else{
+      bot.say({
+        channel:'bot_test',
+        text:title + "をやろう\n" + url //JSON.stringify(res,null," ")
+      })
+    }
+  })
+
+});
+
+
 // say hi
 controller.hears('hi',['direct_message','direct_mention','mention'],function(bot,message) {
-    bot.reply(message,'hi');
+  bot.reply(message,'hi');
 });
