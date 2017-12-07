@@ -68,7 +68,7 @@ var github = new GitHubApi({
 
 github.authenticate({
   type: 'token',
-  token: 'ea33bee88b3bb477a76b26bc9dc35a2d6d4938fb'
+  token: 'xxxxxxxxxxxxxx'
 });
 
 // TODO: optional authentication here depending on desired endpoints. See below in README.
