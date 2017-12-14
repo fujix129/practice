@@ -68,40 +68,24 @@ var github = new GitHubApi({
 
 github.authenticate({
   type: 'token',
-  token: 'xxxxxxxxxxxxxx'
+  token: process.env.token_github
 });
 
-// TODO: optional authentication here depending on desired endpoints. See below in README.
-
 controller.hears('今日やること',['direct_message','direct_mention','mention'],function(bot,message) {
-  github.issues.getForRepo({
-    owner: 'sasekikun',
-    repo: 'sasekikun.github.io',
+  github.issues.getForOrg({
+    org: 'sasekikun',
     filter: 'all'
   }).then(res => {
-    var count = 0;
-    do{
-      var select = Math.floor(Math.random() * res.data.length);
-      // var title = JSON.stringify(res.data[select],null," ");//.title;
-      var title = res.data[select].title;
-      var url = res.data[select].html_url;
-      count+=1;
-      if ( count > 10 ) {
-        break;
-      }
-    }  while (!url.match(/issue/));
-    if ( count > 10 ) {
-      bot.say({
-        channel:'bot_test',
-        text:"どうしよっか。。。"
-      })
-    }else{
-      bot.say({
-        channel:'bot_test',
-        text:title + "をやろう\n" + url //JSON.stringify(res,null," ")
-      })
+    var select = Math.floor(Math.random() * res.data.length);
+    var title = res.data[select].title;
+    var url = res.data[select].html_url;
+    if ( title.length ) {
+      bot.reply(message,title + "をやろう\n" + url);
+    } else {
+      bot.reply(message,'どうしよっか。。。');
     }
-  })
+
+  });
 
 });
 
