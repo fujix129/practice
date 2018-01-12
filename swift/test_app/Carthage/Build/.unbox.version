@@ -1,0 +1,27 @@
+{
+  "Mac" : [
+    {
+      "name" : "Unbox",
+      "hash" : "3d9d746a8797edf20d911535a506e0e2f39e9672d006be71f12d98401136f7c8"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "Unbox",
+      "hash" : "8eace95193c9871e208081de9969156f1ff1757db61f0b7140f5c8daf3c93b07"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "Unbox",
+      "hash" : "f40f6b10351ae844ba57533927f4971c23d4708214562e561c40788705d0ec72"
+    }
+  ],
+  "commitish" : "2.5.0",
+  "iOS" : [
+    {
+      "name" : "Unbox",
+      "hash" : "8838ebe8ba9258dbdef7ab3da7c0a247f3a5216f8e7ab6bf77d87744d18342da"
+    }
+  ]
+}
